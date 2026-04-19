@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | VSLA Records App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">VSLA Records</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="legal-content">
+        <h1>Privacy Policy</h1>
+        <p><strong>Last Updated:</strong> April 19, 2026</p>
+
+        <p>BenDevsPro ("we," "us," or "our") operates the VSLA Records App (the "App"). We respect your privacy and are committed to protecting it through our compliance with this policy. The App utilizes a "Zero-Knowledge" architecture for your core financial data, ensuring your ledger remains strictly under your control.</p>
+
+        <h2>1. Data We Do Not Collect or Read</h2>
+        <p>We do not have the ability to read, collect, or sell your group's financial ledgers, specific member balances, or internal passwords. The underlying financial data is processed locally on your device and encrypted before any transmission.</p>
+
+        <h2>2. Local Storage & Database Encryption</h2>
+        <p>All financial records entered into the App are stored locally on your device within an encrypted database (using 256-bit AES SQLCipher). Access to this local data requires the internal Admin PIN or device biometric authentication.</p>
+
+        <h2>3. Active Cloud Sync & Disaster Recovery (Firebase)</h2>
+        <p>To allow group members to download and view their up-to-date balances, the App synchronizes your group's ledger to Google Firebase. <strong>This financial payload is strictly encrypted on your device (using PBKDF2 Key Stretching) prior to being uploaded to the cloud.</strong> Because BenDevsPro does not possess your physical Quorum Keys, we cannot decrypt, read, or access this synchronized financial data. It is only readable by members using the App with the correct group credentials.</p>
+
+        <h2>4. User-Generated Media (Profile Photos)</h2>
+        <p>If you choose to assign profile pictures to your group or individual members, <strong>these image files are uploaded to our secure Firebase Storage servers.</strong> This is necessary so that other members of your group can see the updated photos when they synchronize their App. These images are secured with Firebase server rules and are not used by BenDevsPro for any external purposes.</p>
+
+        <h2>5. Disaster Recovery Data (Emails & Phone Numbers)</h2>
+        <p>During Group Creation, the App requires a Primary Recovery Email and at least three member phone numbers to establish a secure "Quorum" for data recovery. These emails and phone numbers are stored strictly within your encrypted database and the encrypted cloud backup file. The App only reads this specific data during a Disaster Recovery event or member login sequence to verify identity. BenDevsPro does not harvest or monitor these contact details.</p>
+
+        <h2>6. Local Notifications & Reminders</h2>
+        <p>The App uses local device scheduling (Android WorkManager) to generate meeting reminders and alerts. <strong>These notifications are created entirely on your device.</strong> We do not use remote push notification services, and no device tracking tokens are transmitted to our servers to trigger these alerts.</p>
+
+        <h2>7. Device Permissions</h2>
+        <p>To provide core functionalities, the App requests the following permissions:</p>
+        <ul>
+            <li><strong>Internet & Network State:</strong> Required to sync encrypted ledgers, upload profile photos, and verify secure login links.</li>
+            <li><strong>Camera & Storage (Photos/Media):</strong> Required to take or select profile pictures. <em>Note: Selected images are uploaded to our cloud servers to sync with your group.</em></li>
+            <li><strong>Biometric Hardware:</strong> Used for secure local login. Biometric data is processed entirely by your device's operating system and never leaves your phone.</li>
+            <li><strong>Notifications:</strong> Required to display local, on-device meeting reminders and group alerts.</li>
+            <li><strong>Contacts (Optional):</strong> Used locally to let you quickly select a phone number from your address book. We do not upload your entire contact list.</li>
+        </ul>
+
+        <h2>8. Data Deletion & Cycle Closure</h2>
+        <p>Administrators may permanently delete a group's ledger. When confirmed, the App destroys the local encrypted database and issues a command to permanently delete the associated encrypted backup file and photos from Firebase Storage. Surviving local manual backups (.enc) remain strictly on your device.</p>
+
+        <h2>9. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy, please contact us at: <strong>bendevspro@gmail.com</strong></p>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> BenDevsPro. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
