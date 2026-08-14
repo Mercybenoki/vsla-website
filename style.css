@@ -89,17 +89,27 @@ main {
     display: inline-block;
     background-color: var(--primary-color);
     color: white;
-    padding: 0.8rem 2rem;
+    padding: 1rem 2.5rem;
     border-radius: 30px;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
     transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .cta-button:hover {
     background-color: #005A4F;
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.install-note {
+    font-size: 0.85rem !important;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    margin-bottom: 0 !important;
+    font-style: italic;
 }
 
 .legal-content h1 {
